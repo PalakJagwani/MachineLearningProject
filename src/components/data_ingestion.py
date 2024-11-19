@@ -1,0 +1,1 @@
+## Reading the data required for some module (components are the modules that we are going to be using in the project)
