@@ -9,6 +9,7 @@ from src.logger import logging
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+from src.components.data_transformation import DataTransformation, DataTransformationConfig
 
 ## In my data ingestion component if any data input is required, we'll give it through this DataIngestionConfig class
 @dataclass ## this decorator will help us to define class variables without using init (used only when we have just variables  to define, if you have function also using __init__ is better)
@@ -45,4 +46,6 @@ class DataIngestion :
         
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data, test_data = obj.initiate_data_ingestion()
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data, test_data)
