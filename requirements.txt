@@ -7,4 +7,4 @@ matplotlib
 dill
 xgboost
 flask
--e .
+# -e .
